@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Sederhana</title>
+
+    <!-- ===== CSS ===== -->
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);                                          a
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .harga {
+            color: green;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background: orange;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkorange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HTML ===== -->
+    <h1>Toko Sepatu & Baju</h1>
+    <div id="output" class="container"></div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        let barang = [
+            { nama: "T-shirt", harga: 10000 },
+            { nama: "Jasa Joki Akun FF", harga: 25000 },
+            { nama: "Jual Akun EPEP", harga: 90000 },
+            { nama: "Netflix premium", harga: 500000 },
+            { nama: "Meteor", harga: 200000 },
+            { nama: "Meja Bekas Soekarno", harga: 350000 },
+            { nama: "langganan nonton mas amba   ", harga: 500000 }
+        ];
+
+        let hasil = barang.map(item => {
+            return `
+            <div class="card">
+                <h2>${item.nama}</h2>
+                <p class="harga">Rp ${item.harga}</p>
+                <button onclick="beli('${item.nama}')">Beli</button>
+            </div>
+            `;
+        }).join("");
+
+        document.getElementById("output").innerHTML = hasil;
+
+        function beli(nama) {
+            alert("Kamu membeli " + nama);
+        }
+    </script>
+
+</body>
+</html>
+</body>
+</html>
